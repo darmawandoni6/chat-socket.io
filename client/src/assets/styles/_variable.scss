@@ -1,0 +1,12 @@
+$min-contrast-ratio: 3;
+// color
+$primary: #049f99;
+$danger: #e24032;
+
+$form-floating-padding-y: 9px;
+$form-floating-padding-x: 7px;
+$input-font-size: 12px;
+$form-floating-height: 38px;
+.form-floating > label {
+  font-size: $input-font-size;
+}
