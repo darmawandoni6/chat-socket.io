@@ -8,6 +8,30 @@ const findUser = (users = [], id) => {
   return false;
 };
 
+const renderMessage = (messages) => {
+  const listChat = [];
+  if (messages) {
+    const now = moment().format('YYYY-MM-DD');
+    messages.forEach((element) => {
+      let { createdAt } = element;
+      const createdMsg = moment(createdAt).format('YYYY-MM-DD');
+      createdAt = moment(createdMsg);
+      const dif = moment(now).diff(createdAt, 'days');
+      if (dif === 0) {
+        if (!listChat.find((item) => item === 'Today')) {
+          listChat.push('Today');
+        }
+      } else if (dif === 1) {
+        if (!listChat.find((item) => item === 'Tomorow')) listChat.push('Tomorow');
+      } else if (!listChat.find((item) => item === createdMsg)) {
+        listChat.push(createdMsg);
+      }
+      listChat.push(element);
+    });
+  }
+  return listChat;
+};
+
 export default {
   handleSendMessage: (messages, send) => {
     const payloadSend = {
@@ -20,7 +44,8 @@ export default {
       message: send.message,
       code: send.code,
     };
-    return [...messages, payloadSend];
+
+    return renderMessage([...messages, payloadSend]);
   },
   handleReceiveMessages: (messages = [], receive) => {
     const i = messages.findIndex((item) => item.code === receive.code);
@@ -28,30 +53,10 @@ export default {
       delete messages[i].code;
       return [...messages];
     }
-    return [...messages, receive];
+    return renderMessage([...messages, receive]);
   },
   handleListMessages: (messages) => {
-    const listChat = [];
-    if (messages) {
-      const now = moment().format('YYYY-MM-DD');
-      messages.forEach((element) => {
-        let { createdAt } = element;
-        const createdMsg = moment(createdAt).format('YYYY-MM-DD');
-        createdAt = moment(createdMsg);
-        const dif = moment(now).diff(createdAt, 'days');
-        if (dif === 0) {
-          if (!listChat.find((item) => item === 'Today')) {
-            listChat.push('Today');
-          }
-        } else if (dif === 1) {
-          if (!listChat.find((item) => item === 'Tomorow')) listChat.push('Tomorow');
-        } else if (!listChat.find((item) => item === createdMsg)) {
-          listChat.push(createdMsg);
-        }
-        listChat.push(element);
-      });
-    }
-    return listChat;
+    return renderMessage(messages);
   },
   handleOnlineRoom: (listRoom = [], user) => {
     listRoom.forEach((element, i) => {
@@ -67,7 +72,7 @@ export default {
     if (idx >= 0) {
       listRoom[idx] = {
         ...listRoom[idx],
-        messages: [notif],
+        message: notif,
       };
     }
     return [...listRoom];

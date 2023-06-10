@@ -1,0 +1,137 @@
+export const listChat = [
+  {
+    img: '/images/alice.jpg',
+    name: 'Alice',
+    chatDate: '12:51',
+    unread: 3,
+    isTyping: true,
+    lastMessage: 'hyBro',
+  },
+  {
+    img: '/images/study-group.jpg',
+    name: 'Study Group',
+    chatDate: '11:20',
+    unread: 99,
+    isTyping: false,
+    lastMessage: 'Emily: Why is this so difficult????😩😩😩😩😩😩',
+  },
+  {
+    img: '/images/david-r-cook.jpg',
+    name: 'David R Cook',
+    chatDate: '11:20',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+  {
+    img: '/images/timmy-m-harley.jpg',
+    name: 'Timmy M Harley',
+    chatDate: '11:20',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+  {
+    img: '/images/richard-hamilton.jpg',
+    name: 'Richard Hamilton',
+    chatDate: '11:20',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+  {
+    img: '/images/cristy-gowen.jpg',
+    name: 'Cristy Gowen',
+    chatDate: '15/9/2020',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+  {
+    img: '/images/jason.jpg',
+    name: '+1 626-862-6274',
+    chatDate: '15/9/2020',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+  {
+    img: '/images/marsha-taylor.jpg',
+    name: 'Marsha Taylor',
+    chatDate: '15/9/2020',
+    unread: 0,
+    isTyping: false,
+    lastMessage: 'Whats going on??? 🖖🖖',
+  },
+];
+
+export const listMessage = [
+  {
+    isSender: true,
+    message: "Hey! How's it going??",
+    time: '21:32',
+    type: 'text',
+  },
+  {
+    isSender: false,
+    message: "I'm doing fine! What about you??",
+    time: '21:35',
+    type: 'text',
+  },
+  {
+    isSender: true,
+    message: "I'm good, but I'm sooo bored 🥱🥱🥱",
+    time: '21:35',
+    type: 'text',
+  },
+  {
+    isSender: false,
+    message: 'Check this out...',
+    time: '21:36',
+    type: 'text',
+  },
+  {
+    isSender: false,
+    message: '😝😝😝',
+    time: '21:36',
+    type: 'text',
+  },
+  {
+    isSender: false,
+    imgUrl: '/images/meme-coding.png',
+    time: '21:36',
+    type: 'img',
+  },
+  {
+    isSender: false,
+    imgUrl: '/images/meme-khaleesi.jpg',
+    time: '21:36',
+    type: 'img',
+  },
+  {
+    isSender: true,
+    message: 'hahahahaaha',
+    time: '21:39',
+    type: 'text',
+  },
+  {
+    isSender: true,
+    message: '🤣🤣🤣🤣',
+    time: '21:39',
+    type: 'text',
+  },
+  {
+    isSender: true,
+    message:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla similique eum,\n unde obcaecati dolorum libero dignissimos neque quas quisquam officia autem odio quibusdam quo repudiandae fuga numquam dolor molestias facilis?',
+    time: '21:39',
+    type: 'text',
+  },
+  {
+    isSender: false,
+    message:
+      'Cobra : Sabo, Tolong bilang sama Luffy dan Vivi bahwa kami adalah klan D \n \nSabo : Emang gue pikirin\n\nLuffy : Emang gue peduli?\n\nVivi : tanpa nama D aja hidup kita udah sensara pak\n\nPasti Ada banyak anggota Klan D diseluruh dunia. Cuma yang berani menampakkan jati diri mereka cuma keluarga Monkey D, Gol D, Jaguar D, Marshall D.,',
+    time: '21:39',
+    type: 'text',
+  },
+];
